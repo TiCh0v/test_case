@@ -1,1 +1,3 @@
 в качестве апи используется jsonPlaceholder. и да я забыл добавить basenamе...
+
+https://tich0v.github.io/test_case/
