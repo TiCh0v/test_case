@@ -1,0 +1,2 @@
+*{margin:0;padding:0;box-sizing:border-box}input,button,textarea,select{margin:0;font:inherit}
+.navbar{background-color:#d0ff00;display:flex;align-items:center;justify-content:center;gap:30px;height:50px;width:100%}.navbar .link{color:#2c2c2c;text-decoration:none;font-size:17pt}
