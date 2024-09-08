@@ -1,0 +1,33 @@
+.card{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+
+    margin-bottom: 10px;
+    height: 200px;
+
+    display: flex;
+
+
+
+
+    .card_title{
+        font-size: 15px;
+    }
+    .card_body{
+        font-size: 12px;
+    }
+
+    .card_buttonsContainer{
+        display: flex;
+        flex-direction: column;
+        width: 50px;
+        gap: 5px;
+    }
+
+    .card_innerContainer{
+        width: 100%;
+        padding-left: 10px;
+        overflow: hidden;
+    }
+}

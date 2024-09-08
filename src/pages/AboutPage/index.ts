@@ -1,5 +1,5 @@
-import { AsyncAboutPage } from "./ui/AboutPage.async"
+import { AsyncCreatePage } from "./ui/CreatePage.async"
 
 export {
-    AsyncAboutPage as About
+    AsyncCreatePage as Create
 }

@@ -8,24 +8,13 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     const isDev = options.mode === 'development'
 
 
-    // const cssLoadersWithModules = {
-    //     loader: "css-loader",
-    //     options: {
-    //       modules: {
-    //         localIdentName: '[path][name]__[local]'
-    //       },
-    //     },
-    // }
 
 
     const scssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
-          
           MiniCssExtractPlugin.loader,
-          // Translates CSS into CommonJS
           "css-loader",
-          // Compiles Sass to CSS
           "sass-loader",
         ],
 
@@ -38,10 +27,25 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         exclude: /node_modules/,
     }
 
+    const assetLoader = {
+        test: /\.svg$/i,
+        use: [
+            {
+                loader: '@svgr/webpack',
+                options: {
+                    icon: true,
+                }
+            }
+        ],
+    }
+
+
 
     return[
+        assetLoader,
         scssLoader,
         tsLoader,
+    
     ]
 
 }

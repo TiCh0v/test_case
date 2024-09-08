@@ -1,30 +1,28 @@
-import React, {useState} from 'react';
-import './App.scss'
-import { Link, Outlet } from 'react-router-dom';
+import { useEffect } from 'react';
+
+import { useAppDispatch } from '@/store/store';
+import { loadPostsFromLocalStorage, fetchPosts } from '@/features/posts/postsSlice';
+
+import Navbar from '@/wigdets/Navbar/Navbar';
+import { Outlet } from 'react-router-dom';
+
+
 
 
 
 export const App = () => {
-    const [count, setCount] = useState<number>(0);
+  const dispatch = useAppDispatch();
 
-    const increment = () => {
-        setCount(prev => prev + 1)
-       
-    }
+  useEffect(() => {
+    dispatch(loadPostsFromLocalStorage());
 
+    dispatch(fetchPosts());
+  }, [dispatch]);
 
-    return (
-        <div >
-
-            <Link to={'/shop'}>shop</Link>
-            <Link to={'/about'}>about</Link>
-
-            <h1 className='button'>{count}</h1>
-            <button onClick={increment}><span>
-                asfasf
-            </span></button>
-            <Outlet />
-            
-        </div>
-    );
+  return (
+    <div className='app'>
+      <Navbar />
+      <Outlet />
+    </div>
+  );
 };
